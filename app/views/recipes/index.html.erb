@@ -5,10 +5,15 @@
 	<tr>
 		<th>Image</th>
 		<th>Name</th>
-		<th>Description</th>
+		<th>Social Rank</th>
 	</tr>
-	
+	<% @results.each do |recipe| %>
+		<tr>
+			<td><%= link_to "#{image_tag(recipe["image_url"], height:'100', width:'100')}", "#{recipe["source_url]}"  %></td>
+			<td><%= lilnk_to "#{recipe["title"]}", "#{recipe["source_url"]}" %></td>
+			<td><%= recipe["social_rank"] %></td> 
+		</tr>
+	<% end %>
 </table>
 
 
-<p> Powered By Food2Fork.com</p>
